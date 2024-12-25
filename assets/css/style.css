@@ -65,19 +65,19 @@ header {
   align-items: center;
   justify-content: space-between;
 }
-header .logo {
+.logo {
   display: flex;
   align-items: center;
 }
-header .logo img {
+.logo img {
   max-width: 50px;
 }
-header .logo .text {
+.logo .text {
   margin-left: 5px;
   font-size: 2.6rem;
   font-weight: 800;
 }
-header .logo .text span {
+.logo .text span {
   color: var(--primary-color);
 }
 nav ul {
@@ -298,6 +298,133 @@ nav ul li a.active {
   font-weight: 800;
   margin-bottom: 20px;
 }
+.deals .button {
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* Simple Place Style */
+.simple {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+.simple .text-content ul {
+  margin-bottom: 30px;
+}
+.simple .text-content ul li {
+  margin-left: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.simple .video-content {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* Newsletter and Discount Banner */
+.newsletter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.newsletter-form {
+  border: 1px solid var(--primary-color);
+  border-radius: 20px;
+  padding: 20px 30px;
+  width: 30%;
+}
+.newsletter-form .title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--dark);
+}
+.newsletter-form .description {
+  font-size: 1rem;
+  color: var(--light);
+  margin: 20px 0;
+}
+.newsletter-form hr {
+  border-top: .5px solid var(--light);
+  margin-bottom: 20px;
+}
+.newsletter-form .form input {
+  display: block;
+  width: 100%;
+  padding: 20px 30px;
+  margin: 20px 0;
+  color: var(--primary-color);
+  background-color: var(--bg);
+  border: 0;
+  border-radius: 10px;
+}
+.newsletter-form .form input:focus {
+  outline: none;
+}
+.newsletter-form .form .btn-submit {
+  background-color: var(--primary-color);
+  color: var(--white);
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+.newsletter .discount-banner {
+  width: 70%;
+  position: relative;
+}
+.newsletter .discount-banner .content img {
+  height: 400px;
+}
+.newsletter .discount-banner .content .discount {
+  position: absolute;
+  bottom: 60px;
+  right: 10px;
+  padding: 40px;
+  border-radius: 20px;
+  color: var(--white);
+  background-color: var(--primary-color);
+  text-align: center;
+  transform: rotate(-25deg);
+}
+.newsletter .discount-banner .content .discount p {
+  font-size: 1.2rem;
+  color: var(--white);
+}
+.newsletter .discount-banner .content .discount .get-off {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+/* Footer */
+footer {
+  color: var(--dark);
+  text-align: center;
+  padding: 100px 250px;
+  background-color: var(--bg);
+}
+footer .logo {
+  display: flex;
+  justify-content: center;
+}
+footer .description {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+footer .social-links a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: var(--dark);
+  padding: 20px;
+  transition: all .3s ease-in-out;
+}
+footer .social-links a:hover {
+  color: var(--primary-color);
+}
+footer hr {
+  margin: 30px 0;
+}
+
 
 /* Tablet Responsive */
 @media screen and (max-width: 992px) {
@@ -316,7 +443,8 @@ nav ul li a.active {
   {
     padding: 80px 20px;
   }
-  .tours {
+  .tours,
+  .simple {
     gap: 10px;
   }
   .banner-title {
@@ -340,6 +468,16 @@ nav ul li a.active {
   .deals-container .card .content .second {
     left: 20px;
   }
+  .simple .section-title {
+    font-size: 2rem;
+  }
+  .newsletter-form,
+  .newsletter .discount-banner {
+    width: 50%;
+  }
+  footer {
+    padding: 50px;
+  }
 }
 
 /* Mobile Responsive */
@@ -359,7 +497,13 @@ nav ul li a.active {
   {
     flex-direction: column-reverse;
   }
-  .column-2 {
+  .simple,
+  .newsletter {
+    flex-direction: column;
+  }
+  .column-2,
+  .newsletter-form,
+  .newsletter .discount-banner {
     width: 100%;
   }
   .destination .card-container {
