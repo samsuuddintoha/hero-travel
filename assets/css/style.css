@@ -26,6 +26,7 @@ img {
 }
 .section-description {
   color: var(--light);
+  margin: 30px 0;
 }
 .btn-primary {
   color: var(--white);
@@ -33,7 +34,17 @@ img {
   font-size: 1.1rem;
   font-weight: 600;
   padding: 14px 36px;
+  border: 0;
   border-radius: 16px;
+}
+.column-2 {
+  width: 50%;
+}
+
+.header-content {
+  max-width: 620px;
+  text-align: center;
+  margin: 0 auto;
 }
 
 /* Common CSS Style */
@@ -149,6 +160,145 @@ nav ul li a.active {
   margin-right: 10px;
 }
 
+/* Popular Tours Style */
+.tours {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 100px;
+}
+.tours .image img {
+  width: 100%;
+}
+.tours ul {
+  padding-left: 20px;
+}
+.tours ul li {
+  margin: 20px 0;
+}
+
+/* Popular Destination */
+.destination .section-description {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.destination .card-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(3, 400px);
+  gap: 20px;
+}
+.destination .card-container .card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.destination .card-container .card .title{
+  position: absolute;
+  color: var(--white);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  font-weight: 600;
+}
+.destination .card-1, .card-2
+{
+  grid-column: span 6;
+}
+.destination .card-4, .card-6 {
+  grid-column: span 5;
+}
+.destination .card-3 {
+  grid-column: span 4;
+}
+.destination .card-5 {
+  grid-column: span 3;
+}
+.destination .card-7 {
+  grid-column: span 7;
+}
+
+/* Why Choose Us or Our Quality */
+.quality .card-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.quality .card-container .card {
+  border-radius: 20px;
+  padding: 30px;
+}
+.quality .card-container .card img {
+  max-width: 60px;
+}
+.quality .card-container .card .title {
+  font-size: 1.5rem;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.quality .card-bg-1 {
+  background-color: #fbb46320;
+  border: 1px solid #FBB563;
+}
+.quality .card-bg-2 {
+  background-color: #29CEF620;
+  border: 1px solid #29CEF6;
+}
+.quality .card-bg-3 {
+  background-color: #E9444420;
+  border: 1px solid #E94444;
+}
+
+/* Deals & Discount */
+.deals-container .card .content {
+  margin: 20px 0;
+  position: relative;
+  overflow: hidden;
+}
+.deals-container .card .content img {
+  max-height: 550px;
+  background-size: cover;
+}
+.deals-container .card .content .text-content {
+  background-color: rgba(255, 255, 255, .8);
+  position: absolute;
+  top: 100px;
+  right: 100px;
+  bottom: 100px;
+  border-radius: 20px;
+  padding: 50px;
+  max-width: calc(50% - 100px);
+}
+.deals-container .card .content .second {
+  left: 100px;
+}
+.deals-container .card .content .text-content .about {
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+.deals-container .card .content .text-content .title {
+  color: var(--dark);
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+.deals-container .card .content .text-content .description {
+  color: var(--light);
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+.deals-container .card .content .text-content .price {
+  color: var(--primary-color);
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
 /* Tablet Responsive */
 @media screen and (max-width: 992px) {
   .mobile-menu {
@@ -166,12 +316,29 @@ nav ul li a.active {
   {
     padding: 80px 20px;
   }
+  .tours {
+    gap: 10px;
+  }
   .banner-title {
     font-size: 3rem;
   }
   .banner .btn-container
   {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .destination .card-container {
+    grid-template-rows: repeat(3, 200px);
+  }
+  .deals-container .card .content .text-content {
+    top: 20px;
+    right: 20px;
+    bottom: 20px;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 60%;
+  }
+  .deals-container .card .content .second {
+    left: 20px;
   }
 }
 
@@ -183,8 +350,41 @@ nav ul li a.active {
   .banner-description {
     margin: 10px;
   }
-  .banner .btn-container
+  .banner .btn-container,
+  .quality .card-container
   {
     grid-template-columns: repeat(1, 1fr);
+  }
+  .tours
+  {
+    flex-direction: column-reverse;
+  }
+  .column-2 {
+    width: 100%;
+  }
+  .destination .card-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .destination .card-container .card{
+    grid-column: span 6;
+  }
+  .deals-container .card .content .text-content {
+    top: 100px;
+    right: 20px;
+    bottom: 20px;
+    left: 20px;
+    padding: 30px;
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+  }
+  .deals-container .card .content img {
+    height: 500px;
+    width: auto;
+  }
+  .deals-container .card .content .text-content .about{
+    flex-wrap: wrap;
+    gap: 10px;
+    column-gap: 30px;
   }
 }
